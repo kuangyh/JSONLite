@@ -42,7 +42,9 @@ On rawValue: unlike SwiftyJSON, rawValue in JSONLite is AnyObject?, otherwise it
 
 ### Mutable interface
 
-JSONLite is read-only --- modifying stuff in the same fashion as read can be quite confusing, and it brings complexity in library implementation. On the other hard, constructing a JSON object in Swift is quite easy (as easy as any dynamic language) and IMO most of the time you should prefer constructing an immutable object instead of modifying stuff.
+JSONLite is read-only --- modifying stuff in the same fashion as read can be confusing --- I don't know what you expect when you set do json["foo"] = "bar" when json is actually an array. And it ads implementation complexity.
+
+Also IMO it's a bad smell if you want to modify / maintain dynamic JSON data in a static language like Swift, you should use a struct and do parse/dump instead --- constructing a JSON object in Swift is quite easy (as easy as any dynamic language).
 
 ## Performance
 
