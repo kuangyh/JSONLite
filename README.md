@@ -24,7 +24,7 @@ It also have a set of more convenience (and actually faster) getters.
 
     let x: Int = json["foo"]  // Same as json["foo"].intValue, Swift type inference works.
 
-But note that you can't do this for bool, you have to do explicitly say .boolValue, implicit boolean converting is fun and I'm not a fun person.
+But note that you can't do this for Bool, you have to explicitly say .boolValue, implicit boolean converting is fun and I'm not a fun person.
 
 It doesn't have the key path array magic like SwiftyJSON do, mainly because I don't use it in my project.
 
@@ -34,7 +34,7 @@ On rawValue: unlike SwiftyJSON, rawValue in JSONLite is AnyObject?, otherwise it
 
     for x in json["foo"].arrayValue {
       // Note that x is AnyObject, you only wrap it to JSONLite when you need to.
-      // That doesn't add much key types but saves CPU.
+      // That doesn't add much key strokes but saves CPU.
     }
     for (key, value) in json["bar"].dictValue {
       // :-)
