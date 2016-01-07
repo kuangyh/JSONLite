@@ -24,7 +24,11 @@ It also have a set of more convenience (and actually faster) getters.
 
     let x: Int = json["foo"]  // Same as json["foo"].intValue, Swift type inference works.
 
-But note that you can't do this for Bool, you have to explicitly say .boolValue, implicit boolean converting is fun and I'm not a fun person.
+But note that you can't do this for Bool, you have to explicitly say
+
+    json["blah"].boolValue
+
+That's because of Bool has .boolValue (aha...) so compiler get confused about which subscript implementation to use.
 
 It doesn't have the key path array magic like SwiftyJSON do, mainly because I don't use it in my project.
 
